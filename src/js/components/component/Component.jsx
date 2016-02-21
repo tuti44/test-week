@@ -8,7 +8,7 @@ define(['React'],
             getInitialState: function () {
                 return {
                     click: false
-                }
+                };
             },
 
             onClick: function () {
