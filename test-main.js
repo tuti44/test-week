@@ -10,7 +10,8 @@ requirejs.config({
     baseUrl: '/base/build/js',
     paths: {
         lodash: '../vendor/lodash',
-        React: '../vendor/react-with-addons'
+        React: '../vendor/react',
+        components: '../js/components'
     },
     map: {
         '*': {

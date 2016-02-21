@@ -25,6 +25,10 @@ module.exports = function (grunt) {
             build: {
                 files: [
                     {
+                        src: 'src/img/*',
+                        dest: 'build/img/'
+                    },
+                    {
                         src: 'src/css/main.css',
                         dest: 'build/css/main.css'
                     },
