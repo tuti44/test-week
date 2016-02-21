@@ -1,4 +1,4 @@
-define(['lodash', 'react', 'reactDom', 'router'], function (_, React, ReactDOM, ReactRouter) {
+define(['lodash', 'react', 'reactDOM', 'router'], function (_, React, ReactDOM, ReactRouter) {
     'use strict';
 
     var Router = ReactRouter.Router;

@@ -11,18 +11,16 @@ define(['React'],
                 }
             },
 
-            onClick: function (event) {
-                event.preventDefault();
-                setState({
+            onClick: function () {
+                this.setState({
                     click: true
                 });
             },
 
             render: function () {
-                console.log(this.state.click);
                 return (
-                    <div>
-                      <h2 onClick={this.onClick}>Simple component</h2>
+                    <div onClick={this.onClick}>
+                      <h2>Simple component</h2>
                     </div>
                 );
             }

@@ -164,6 +164,14 @@ module.exports = function (grunt) {
                 client: {
                     captureConsole: false
                 }
+            },
+            debug: {
+                port: 9999,
+                singleRun: false,
+                configFile: 'karma.conf.js',
+                client: {
+                    captureConsole: false
+                }
             }
         },
         umd: {

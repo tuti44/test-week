@@ -7,11 +7,12 @@ for (var file in window.__karma__.files) {
 }
 
 requirejs.config({
-    baseUrl: '/base/build/js',
+    baseUrl: '/base/build',
     paths: {
-        lodash: '../vendor/lodash',
-        React: '../vendor/react',
-        components: '../js/components'
+        lodash: 'vendor/lodash',
+        React: 'vendor/react',
+        reactDOM: 'vendor/react-dom',
+        components: 'js/components'
     },
     map: {
         '*': {
@@ -30,6 +31,7 @@ requirejs.config({
         },
         React: {
             exports: 'React'
-        }
+        },
+        reactDom: ['react']
     }
 });

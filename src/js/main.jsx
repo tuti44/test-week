@@ -2,7 +2,7 @@ requirejs.config({
     paths: {
         lodash: '../vendor/lodash',
         react: '../vendor/react',
-        reactDom: '../vendor/react-dom',
+        reactDOM: '../vendor/react-dom',
         router: 'https://cdnjs.cloudflare.com/ajax/libs/react-router/2.0.0/ReactRouter'
     },
     map: {
@@ -21,7 +21,7 @@ requirejs.config({
     }
 });
 
-requirejs(['lodash', 'react', 'reactDom', 'components/MainView'],
+requirejs(['lodash', 'react', 'reactDOM', 'components/MainView'],
     function (_, React, ReactDOM, MainView) {
         'use strict';
         var mountPoint = document.getElementById('app');

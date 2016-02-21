@@ -1,7 +1,7 @@
 /** @jsx React.DOM */
 
-define(['React', 'components/component/Component'],
-    function (React, Component) {
+define(['lodash', 'React', 'reactDOM', 'components/component/Component'],
+    function (_, React, ReactDOM, Component) {
         'use strict';
 
         var TestUtils = React.addons.TestUtils;
@@ -10,7 +10,9 @@ define(['React', 'components/component/Component'],
             it('should work', function () {
                 var instance = React.createElement(Component);
                 var comp = TestUtils.renderIntoDocument(instance);
-                console.log(comp);
+                var node = ReactDOM.findDOMNode(comp);
+                TestUtils.Simulate.click(node);
+                expect(comp.state.click).toEqual(true);
             });
         });
 
