@@ -169,9 +169,7 @@ module.exports = function (grunt) {
                 port: 9999,
                 singleRun: false,
                 configFile: 'karma.conf.js',
-                client: {
-                    captureConsole: false
-                }
+                browser: ['Chrome']
             }
         },
         umd: {
