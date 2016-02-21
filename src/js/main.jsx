@@ -1,11 +1,13 @@
 requirejs.config({
     paths: {
         lodash: '../vendor/lodash',
-        React: '../vendor/react-with-addons'
+        react: '../vendor/react',
+        reactDom: '../vendor/react-dom',
+        router: 'https://cdnjs.cloudflare.com/ajax/libs/react-router/2.0.0/ReactRouter'
     },
     map: {
         '*': {
-            react: 'React'
+            React: 'react'
         }
     },
     shim: {
@@ -13,15 +15,16 @@ requirejs.config({
             exports: '_'
         },
         React: {
-            exports: 'React'
-        }
+            exports: 'react'
+        },
+        reactDom: ['react']
     }
 });
 
-requirejs(['lodash', 'React', 'components/MainView'],
-    function (_, React, MainView) {
+requirejs(['lodash', 'react', 'reactDom', 'components/MainView'],
+    function (_, React, ReactDOM, MainView) {
         'use strict';
         var mountPoint = document.getElementById('app');
-        window.scrum = React.render(<MainView />, mountPoint);
+        ReactDOM.render(<MainView />, mountPoint);
     }
 );

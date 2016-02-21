@@ -25,16 +25,24 @@ module.exports = function (grunt) {
             build: {
                 files: [
                     {
+                        src: 'src/css/main.css',
+                        dest: 'build/css/main.css'
+                    },
+                    {
+                        src: 'node_modules/react/dist/react-with-addons.js',
+                        dest: VENDOR_TARGET + 'react.js'
+                    },
+                    {
+                        src: 'node_modules/react-dom/dist/react-dom.js',
+                        dest: VENDOR_TARGET + 'react-dom.js'
+                    },
+                    {
                         src: 'node_modules/requirejs/require.js',
                         dest: VENDOR_TARGET + 'require.js'
                     },
                     {
                         src: 'node_modules/lodash/index.js',
                         dest: VENDOR_TARGET + 'lodash.js'
-                    },
-                    {
-                        src: 'node_modules/react/dist/react-with-addons.js',
-                        dest: VENDOR_TARGET + 'react-with-addons.js'
                     },
                     {
                         src: 'node_modules/requirejs/require.js',

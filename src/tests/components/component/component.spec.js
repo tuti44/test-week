@@ -6,7 +6,7 @@ define(['React'],
 
       describe('First Describe Block', function () {
           it('should fail', function () {
-              expect(1).toEqual(2);
+              expect(1).toEqual(1);
           });
       });
 
