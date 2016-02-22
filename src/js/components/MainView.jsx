@@ -3,27 +3,20 @@ define([
         'react',
         'reactDOM',
         'router',
-        'components/PageHeader'
+        'components/PageHeader',
+        'components/ErrorMsg'
     ],
     function (_,
               React,
               ReactDOM,
               ReactRouter,
-              PageHeader) {
+              PageHeader,
+              ErrorMsg) {
         'use strict';
 
         var Router = ReactRouter.Router;
         var Route = ReactRouter.Route;
         var History = ReactRouter.History;
-
-        var ErrorMsg = React.createClass({
-            displayName: 'ErrorMsg',
-            render: function () {
-                return (
-                    <span className='error'>{this.props.errorMsg}</span>
-                );
-            }
-        });
 
         var LoginPage = React.createClass({
             mixins: [History, React.addons.LinkedStateMixin],
