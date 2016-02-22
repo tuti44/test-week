@@ -4,14 +4,16 @@ define([
         'reactDOM',
         'router',
         'components/PageHeader',
-        'components/ErrorMsg'
+        'components/ErrorMsg',
+        'components/MainApp'
     ],
     function (_,
               React,
               ReactDOM,
               ReactRouter,
               PageHeader,
-              ErrorMsg) {
+              ErrorMsg,
+              MainApp) {
         'use strict';
 
         var Router = ReactRouter.Router;
@@ -171,20 +173,6 @@ define([
                             <button onClick={this.goToLogin}>Login</button>
                         </div>
                     </div>
-                );
-            }
-        });
-
-        var MainApp = React.createClass({
-            mixins: [History],
-            displayName: 'MainApp',
-            goToLogin: function (evt) {
-                evt.preventDefault();
-                this.history.push('/');
-            },
-            render: function () {
-                return (
-                    <button onClick={this.goToLogin}>Logout</button>
                 );
             }
         });
