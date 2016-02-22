@@ -11,13 +11,11 @@ define(['lodash', 'react', 'reactDOM', 'router'], function (_, React, ReactDOM, 
             return (
                 <div>
                     <h1>MarkBook</h1>
+                    <img src="img/logo.jpg"/>
                 </div>
             );
         }
     });
-
-    //<img src="./resources/logo.jpg"/>
-
 
     var ErrorMsg = React.createClass({
         displayName: 'ErrorMsg',
