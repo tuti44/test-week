@@ -7,7 +7,6 @@
 module.exports = function (grunt) {
 
     var VENDOR_TARGET = 'build/vendor/';
-    //var VENDOR_STYLE_TARGET = 'build/css/vendor/';
 
     grunt.initConfig({
         clean: {
@@ -16,9 +15,6 @@ module.exports = function (grunt) {
             },
             build: {
                 src: 'build/**/*'
-            },
-            dist: {
-                src: 'dist/**/*'
             }
         },
         copy: {
@@ -47,10 +43,6 @@ module.exports = function (grunt) {
                     {
                         src: 'node_modules/lodash/index.js',
                         dest: VENDOR_TARGET + 'lodash.js'
-                    },
-                    {
-                        src: 'node_modules/requirejs/require.js',
-                        dest: VENDOR_TARGET + 'require.js'
                     },
                     {
                         expand: true,
@@ -116,6 +108,7 @@ module.exports = function (grunt) {
                     'src/**/*.css',
                     'src/**/*.jsx',
                     'src/js/**/*.js',
+                    'tests/**/*.js',
                     '!src/js/components/**/*.js',
                     '!src/js/*.js',
                     'Gruntfile.js'
@@ -171,32 +164,6 @@ module.exports = function (grunt) {
                 configFile: 'karma.conf.js',
                 browser: ['Chrome']
             }
-        },
-        umd: {
-            //all: {
-            //    options: {
-            //        src: 'node_modules/react-stub-context/dist/index.js',
-            //        dest: VENDOR_TARGET + 'stubContext.js',
-            //        objectToExport: 'stubContext',
-            //        amdModuleId: 'stubContext',
-            //        deps: {
-            //            'default': ['react', 'require', 'exports', 'module'],
-            //            amd: ['react', 'require', 'exports', 'module']
-            //        }
-            //    }
-            //},
-            //Firebase: {
-            //    options: {
-            //        src: 'node_modules/firebase/lib/firebase-web.js',
-            //        dest: VENDOR_TARGET + 'firebase.js',
-            //        objectToExport: 'Firebase',
-            //        amdModuleId: 'Firebase',
-            //        deps: {
-            //            'default': ['require', 'exports', 'module'],
-            //            amd: ['require', 'exports', 'module']
-            //        }
-            //    }
-            //}
         }
     });
     grunt.loadNpmTasks('grunt-scss-lint');
@@ -208,7 +175,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('lint', ['eslint']);
     grunt.registerTask('compile', ['babel']);
-    grunt.registerTask('test', ['karma']);
+    grunt.registerTask('test', ['karma:unit']);
     grunt.registerTask('build', ['lint', 'clean:build', 'compile', 'copy:build']);
     grunt.registerTask('default', ['build', 'test']);
 };

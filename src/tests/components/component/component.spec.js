@@ -1,7 +1,5 @@
-/** @jsx React.DOM */
-
-define(['lodash', 'React', 'reactDOM', 'components/component/Component'],
-    function (_, React, ReactDOM, Component) {
+define(['React', 'reactDOM', 'components/component/Component'],
+    function (React, ReactDOM, Component) {
         'use strict';
 
         var TestUtils = React.addons.TestUtils;
@@ -15,5 +13,4 @@ define(['lodash', 'React', 'reactDOM', 'components/component/Component'],
                 expect(comp.state.click).toEqual(true);
             });
         });
-
     });
