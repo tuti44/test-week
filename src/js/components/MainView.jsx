@@ -10,12 +10,14 @@ define(['lodash', 'react', 'reactDOM', 'router'], function (_, React, ReactDOM, 
         render: function () {
             return (
                 <div>
-                    <img src="./resources/logo.jpg"/>
                     <h1>MarkBook</h1>
                 </div>
             );
         }
     });
+
+    //<img src="./resources/logo.jpg"/>
+
 
     var ErrorMsg = React.createClass({
         displayName: 'ErrorMsg',
@@ -138,6 +140,10 @@ define(['lodash', 'react', 'reactDOM', 'router'], function (_, React, ReactDOM, 
             if (this.createUser()) {
                 this.history.push('/main');
             }
+        },
+        goToLogin: function (evt) {
+            evt.preventDefault();
+            this.history.push('/');
         },
         render: function () {
             return (
