@@ -1,4 +1,4 @@
-define(['React', 'reactDOM', 'components/component/Component'],
+define(['react', 'reactDOM', 'components/component/Component'],
     function (React, ReactDOM, Component) {
         'use strict';
 
