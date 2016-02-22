@@ -166,10 +166,10 @@ module.exports = function (grunt) {
             }
         }
     });
-    grunt.loadNpmTasks('grunt-scss-lint');
-    grunt.registerTask('log', function (text) {
-        grunt.log.writeln(text);
-    });
+    //grunt.loadNpmTasks('grunt-scss-lint');
+    //grunt.registerTask('log', function (text) {
+    //    grunt.log.writeln(text);
+    //});
 
     require('jit-grunt')(grunt);
 
