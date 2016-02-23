@@ -1,4 +1,4 @@
-define(['React', 'router'], function (React, ReactRouter) {
+define(['React', 'router', 'components/login/loginManager'], function (React, ReactRouter, loginManager) {
     'use strict';
 
     var Login = React.createClass({
@@ -18,12 +18,12 @@ define(['React', 'router'], function (React, ReactRouter) {
             var history = this.props.history || this.history;
             var userName = this.refs.userName.value;
             var password = this.refs.password.value;
-            if (localStorage.getItem(userName) !== password) {
+            if (loginManager.authenticateUser(userName, password)) {
+                history.push('/home');
+            } else {
                 this.setState({
                     errorMsg: 1
                 });
-            } else {
-                history.push('/home');
             }
         },
         onSignUp: function () {
