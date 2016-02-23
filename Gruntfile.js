@@ -81,6 +81,7 @@ module.exports = function (grunt) {
             src: [
                 'src/js/**/*.*',
                 'src/tests/**/*.js',
+                'src/tests/**/*.jsx',
                 '!src/js/plugins/**',
                 'Gruntfile.js'
             ]
@@ -98,6 +99,13 @@ module.exports = function (grunt) {
                         src: ['**/*.jsx'],
                         dest: 'build/js/',
                         ext: '.js'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'src/tests/',
+                        src: ['**/*.spec.jsx'],
+                        dest: 'build/tests/',
+                        ext: '.spec.js'
                     }
                 ]
             }

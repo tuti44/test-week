@@ -1,7 +1,7 @@
 define(['React', 'router'], function (React, ReactRouter) {
     'use strict';
 
-    return React.createClass({
+    var Login = React.createClass({
         displayName: 'Login',
         /*
          Error Codes -
@@ -15,6 +15,7 @@ define(['React', 'router'], function (React, ReactRouter) {
             };
         },
         onLogin: function () {
+            var history = this.props.history || this.history;
             var userName = this.refs.userName.value;
             var password = this.refs.password.value;
             if (localStorage.getItem(userName) !== password) {
@@ -22,11 +23,12 @@ define(['React', 'router'], function (React, ReactRouter) {
                     errorMsg: 1
                 });
             } else {
-                this.history.push('/home');
+                history.push('/home');
             }
         },
         onSignUp: function () {
-            this.history.push('/sign-up');
+            var history = this.props.history || this.history;
+            history.push('/sign-up');
         },
         render: function () {
             var errorMsg = '';
@@ -49,7 +51,7 @@ define(['React', 'router'], function (React, ReactRouter) {
         }
     });
 
-
+    return Login;
 });
 
 

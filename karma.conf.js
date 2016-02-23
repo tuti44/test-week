@@ -15,7 +15,7 @@ module.exports = function (config) {
             {pattern: 'build/vendor/**/*.js', included: false},
             {pattern: 'build/img/**/*', included: false},
             {pattern: 'src/tests/**/*.js', included: false},
-            {pattern: 'src/tests/**/*.jsx', included: false},
+            {pattern: 'build/tests/**/*.js', included: false},
             {pattern: 'build/js/**/*.js', included: false},
 
             'test-main.js'
