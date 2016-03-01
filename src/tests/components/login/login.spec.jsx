@@ -31,7 +31,7 @@ define(['React', 'components/login/login', 'router'],
                 expect(myHistory.push).toHaveBeenCalledWith('/home');
             });
 
-            it('should show error when invalid username is entered', function () {
+            xit('should show error when invalid username is entered', function () {
                 var loginComp = renderLogin('abc', 'a1234567');
                 loginComp.onLogin();
                 var actual = loginComp.state.errorMsg;
