@@ -1,7 +1,6 @@
 # ScrumDashboard
 
-[![Build Status](https://travis-ci.org/itsh01/ScrumDashboard.svg?branch=master)](https://travis-ci.org/itsh01/ScrumDashboard)
-
+[![Build Status][![Build Status](https://travis-ci.org/tuti44/test-week.svg?branch=master)](https://travis-ci.org/tuti44/test-week)
 > Scrum dashboard web application
 
 ## Installation
