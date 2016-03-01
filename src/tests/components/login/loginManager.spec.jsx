@@ -10,12 +10,21 @@ define(['React', 'components/login/loginManager'],
                 });
             });
 
-            it('should return true when user credentials are valid', function () {
-                expect(loginManager.authenticateUser('abc', 'a123456')).toBeTruthy();
+            it('should return true when user credentials are valid', function (done) {
+                var promise = loginManager.authenticateUser('abc', 'a123456');
+                promise.then(function (result) {
+                    expect(result).toBeTruthy();
+                    console.info(2);
+                    done();
+                });
+                console.info(1);
             });
 
-            it('should return false when user credentials are invalid', function () {
-                expect(loginManager.authenticateUser('abc', 'a1234567')).toBeFalsy();
+            it('should return false when user credentials are invalid', function (done) {
+                loginManager.authenticateUser('abc', 'a1234567').then(function (result) {
+                    expect(result).toBeFalsy();
+                    done();
+                });
             });
         });
 
